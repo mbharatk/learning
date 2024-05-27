@@ -6,7 +6,7 @@ from transformers import pipeline
 # Load the summarization pipeline. Set facebook/bart-large-cnn as the model to use for summarization
 summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
 # Your text to summarize
-# Source: https://learn.microsoft.com/en-us/training/modules/intro-to-git/1-what-is-vc
+# Source: https://bharatmallavarapu.medium.com/bottlerocket-open-source-os-for-container-hosting-e246757bcfe
 text = """ Amazon has introduced a new Linux-based open-source operating system called Bottlerocket. 
 The purpose of this OS is that it is specifically built to run containers. 
 It runs in Amazon Elastic Kubernetes Service (EKS), Amazon Elastic Container Service (ECS). 
@@ -28,7 +28,7 @@ software to run containers reduces the attack surface compared to general-purpos
 """
 
 # Generate the summary
-summary = summarizer(text, max_length=641, min_length=100)
+summary = summarizer(text, max_length=150, min_length=70)
 
 # Print the summary
 print(summary[0]['summary_text'])
